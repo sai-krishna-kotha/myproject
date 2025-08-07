@@ -40,19 +40,19 @@
     </div>
 
     <!-- Mobile Dropdown Menu -->
-<div id="mobile-menu" class="hidden md:hidden flex-col space-y-3 m-2 mt-0 p-4 pt-0 rounded-lg transition-all duration-300 ease-in-out">
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full h-[calc(100vh-4rem)] bg-blue-600 flex flex-col items-center space-y-6 pt-6 z-40 transition-all duration-300 ease-in-out">
   {% for name in 'home,about,skills,blog,projects,achievements,contact'|split:',' %}
   {% if name != 'blog' %}
     {% with 'myapp:'|add:name as viewname %}
       <a href="{% url viewname %}"
-         class="{% nav_active name %} block py-2 px-2 rounded hover:bg-amber-300  transition-all duration-300 ease-in-out capitalize">
+         class="{% nav_active name %} block py-2 w-full m-2 px-10 rounded hover:bg-amber-300  transition-all duration-300 ease-in-out capitalize">
         {{ name }}
       </a>
     {% endwith %}
     {% else %}
     {% with 'myblog:'|add:name as viewname %}
       <a href="{% url viewname %}"
-         class="{% nav_active name %} block py-2 px-2 rounded hover:bg-amber-300  transition-all duration-300 ease-in-out capitalize">
+         class="{% nav_active name %} block py-2 w-full px-10 m-2 rounded hover:bg-amber-300  transition-all duration-300 ease-in-out capitalize">
         {{ name }}
       </a>
     {% endwith %}
